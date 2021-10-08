@@ -1,3 +1,4 @@
+# Author: Michelle Fu
 
 # import libraries
 import numpy as np
