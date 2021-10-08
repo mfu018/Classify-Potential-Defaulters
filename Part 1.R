@@ -1,4 +1,7 @@
-# Term Project - Loan Prediction Based on Customer Behavior
+# Loan Prediction Based on Customer Behavior
+# Contributors: Xiaohang Li - Data Undertstanding, Data Preparation; 
+#               Michelle Fu - Data Preparation, Modelling, Evaluation; 
+#               Jiamin Feng - Data Preparation
 
 # Load the packages
 source("DataAnalyticsFunctions.R")
@@ -53,7 +56,7 @@ library(corrplot)
 data <- read.csv("Data.csv")
 
 ###########################################################
-### Data Understanding 
+### Data Understanding - Xiaohang Li
 
 # Profession Count Bar plot
 coul <- brewer.pal(3, "Dark2") 
@@ -292,7 +295,7 @@ ggplot(data = mca2_obs_df, aes(x = Dim.1, y = Dim.2)) +
 
 
 ###########################################################
-### Data Preparation
+### Data Preparation - Michelle Fu, Xiaohang Li, Jiamin Feng
 
 ### I. Show summary of the dataset: 
 ### No missing values were discovered in any of the variables
@@ -390,7 +393,7 @@ summary(fit3) # display the best model
 
 
 ###########################################################
-### Modelling 
+### Modelling - Michelle Fu
 
 ### 1) Logistic regression
 ### Constructed a simple logistic regression model with Risk_Flag as the dependent 
@@ -480,7 +483,7 @@ rocplot <- ggplot(DATA,aes(m = log_reg_interact_lasso, d = Risk_Flag))+ geom_roc
 rocplot + style_roc(theme = theme_grey) + geom_rocci(fill="pink") 
 
 ###########################################################
-### Evaluation
+### Evaluation - Michelle Fu
 
 ### K Fold Cross Validation
 ### Create a vector of fold memberships (random order)
